@@ -10,12 +10,13 @@ Cases::Cases()
 	this->m_case_status = 3;
 	std::cout << "Enter case type, priority : ";
 	std::cin >> m_case_type >> m_case_priority;
-	int n, m, temp;
+	int n, m;
 	std::cout << "Enter number of petitioner, respondent : ";
 	std::cin >> n >> m;
 	std::cin.ignore();
 	this->m_petitioner = std::vector<Accused>(n);
 	this->m_respondent = std::vector<Accused>(m);
+	m_time.push_back(time(0));
 }
 
 Cases::~Cases()
@@ -50,25 +51,8 @@ void Cases::display() const
 	m_forl.display();
 	m_againstl.display();
 
-}
+	char buffer[32];
+	ctime_s(buffer, 26, &m_time[0]);
+	std::cout << "Creation time " << buffer << "\n";
 
-
-Time::Time(int y, int mo, int d, int h, int m, int s)
-{
-	this->year = y;
-	this->month = mo;
-	this->day = d;
-	this->hour = h;
-	this->minute = m;
-	this->second = s;
-}
-
-Time::Time()
-{
-	this->year = 0;
-	this->month = 0;
-	this->day = 0;
-	this->hour = 0;
-	this->minute = 0;
-	this->second = 0;
 }
