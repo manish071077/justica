@@ -1,19 +1,15 @@
 #pragma once
 
 #include <iostream>
-#include <vector>
-
-#include "Judge.h"
-#include "Accused.h"
-#include "Lawyer.h"
 
 class Judgement
 {
 public:
-	Judgement(Judge, std::vector<Accused>& arr, Lawyer, Lawyer);
+	Judgement();
 	~Judgement();
+	void display() const;
 private:
-	Judge m_judge;
-	std::vector<Accused> m_accused;
-	Lawyer m_for, m_against;
+	unsigned int m_judgement_id;
+	char verdict[200];
+	static unsigned int m_cnt;
 };

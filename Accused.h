@@ -8,8 +8,9 @@ class Accused
 public:
 	Accused();
 	~Accused();
-	void display();
+	void display() const;
 private:
 	unsigned int m_accused_id;
-	const char* m_accused_name;
+	char m_accused_name[50];
+	static int m_cnt;
 };

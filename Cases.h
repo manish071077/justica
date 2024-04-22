@@ -20,17 +20,18 @@ class Cases
 public:
 	Cases();
 	~Cases();
-	void inputCase();
+	void input();
+	void display() const;
 
 private:
-	unsigned int m_case_number;
+	unsigned int m_case_id;
 	unsigned int m_case_type;
 	unsigned int m_case_status;
 	unsigned int m_case_priority;
-	std::vector<Time> m_time;
-	std::vector<Accused> m_for, m_against;
-	Judge judge;
+	// std::vector<Time> m_time;
+	std::vector<Accused> m_petitioner, m_respondent;
+	Judge m_judge;
 	Lawyer m_forl, m_againstl;
-	char verdict[100];
-	static int number;
+	
+	static unsigned int m_cnt;
 };

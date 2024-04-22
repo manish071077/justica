@@ -1,33 +1,21 @@
 #include "Cases.h"
 
 
-int Cases::number = 0;
+unsigned int Cases::m_cnt = 0;
 
 Cases::Cases()
 {
 	std::cout << "Cases classes contructor\n";
-	number++;
-	this->m_case_number = number;
-	std::cout << "Enter case type : ";
-	std::cin >> this->m_case_type;
+	this->m_case_id = ++m_cnt;
 	this->m_case_status = 3;
-	std::cout << "Enter case priority : ";
-	std::cin >> this->m_case_priority;
-	unsigned int y, mo, d, h, m, s;
-	std::cout << "Enter time in YYYY:MM:DD:HH:MM:SS format seprated by space : ";
-	std::cin >> y >> mo >> d >> h >> m >> s;
-	Time temp(y, mo, d, h, m, s);
-	this->m_time.push_back(temp);
-	int n;
-	std::cout << "Enter number of people in case : ";
-	std::cin >> n;
-	for (int i = 0; i < n; i++)
-	{
-		Accused temp;
-		this->m_for.push_back(temp);
-	}
-
-
+	std::cout << "Enter case type, priority : ";
+	std::cin >> m_case_type >> m_case_priority;
+	int n, m, temp;
+	std::cout << "Enter number of petitioner, respondent : ";
+	std::cin >> n >> m;
+	std::cin.ignore();
+	this->m_petitioner = std::vector<Accused>(n);
+	this->m_respondent = std::vector<Accused>(m);
 }
 
 Cases::~Cases()
@@ -35,10 +23,35 @@ Cases::~Cases()
 	std::cout << "Cases classes destructor\n";
 }
 
-void Cases::inputCase()
+void Cases::input()
 {
+	std::cout << "input function\n";
+}
+
+void Cases::display() const
+{
+	std::cout << "-------------- Case detail -----------------\n";
+	std::cout << "Case id : " << m_case_id << "\n";
+	std::cout << "Case status : " << m_case_status << "\n";
+	std::cout << "Case type and priority : " << m_case_type << " " << m_case_priority << "\n";
+	std::cout << "Petitioner are : \n";
+	for (const Accused& e : m_petitioner)
+	{
+		e.display();
+	}
+	std::cout << "respondent are : \n";
+	for (const Accused& e : m_respondent)
+	{
+		e.display();
+	}
+	std::cout << "Judge is : ";
+	m_judge.display();
+	std::cout << "layers are : \n";
+	m_forl.display();
+	m_againstl.display();
 
 }
+
 
 Time::Time(int y, int mo, int d, int h, int m, int s)
 {

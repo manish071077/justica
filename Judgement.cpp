@@ -1,15 +1,20 @@
 #include "Judgement.h"
 
-Judgement::Judgement(Judge judge, std::vector<Accused>& arr, Lawyer lawyer_for, Lawyer lawyer_against)
+unsigned int Judgement::m_cnt = 0;
+
+Judgement::Judgement()
 {
-	std::cout << "Jugement constructor\n";
-	this->m_judge = judge;
-	this->m_accused = arr;
-	this->m_for = lawyer_for;
-	this->m_against = lawyer_against;
+	std::cout << "Enter case verdict : ";
+	std::cin.getline(verdict, 200);
+	this->m_judgement_id = ++m_cnt;
 }
 
 Judgement::~Judgement()
 {
-	std::cout << "Jugement destrucotr\n";
+	// std::cout << "Jugement destrucotr\n";
+}
+
+void Judgement::display() const
+{
+	std::cout << m_judgement_id << " " << verdict << "\n";
 }
