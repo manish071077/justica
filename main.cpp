@@ -34,9 +34,10 @@ int main(int argc, char* argv[])
 	int n = 3;
 	std::vector<Cases> arr(n);
 	std::cout << "Enter " << n << " times for simulation : ";
-
+	std::vector<Cases> vec;
 	std::priority_queue<Cases, std::vector<Cases>, cmp> pq;
 	for (int i = 0; i < n; i++) {
+		arr[i].display();
 		pq.push(arr[i]);
 	}
 	int day = 1;
@@ -47,7 +48,7 @@ int main(int argc, char* argv[])
 		while (remaning > 0 && !pq.empty()) {
 			Cases temp = pq.top();
 			pq.pop();
-			if (remaning >= 3600 && temp.m_time_req - 3600 >= 0) {
+			if (remaning >= 3600 && (temp.m_time_req - 3600) >= 0) {
 				temp.m_time_req -= 3600;
 				remaning -= 3600;
 			}
@@ -62,8 +63,11 @@ int main(int argc, char* argv[])
 			temp.m_case_heard++;
 			arr.push_back(temp);
 		}
-		day++;
-		remaning += 216000;
+		if (remaning <= 0) {
+			day++;
+			remaning += 216000;
+		}
+		
 		while (!pq.empty()) {
 			Cases temp = pq.top();
 			if (temp.m_case_priority > 0)
@@ -71,9 +75,18 @@ int main(int argc, char* argv[])
 			arr.push_back(temp);
 		}
 		for (const Cases& e : arr) {
-			if (e.m_time_req > 0)
+			if (e.m_time_req <= 0) {
+				complete++;
+				vec.push_back(e);
+			}
+			else {
 				pq.push(e);
+			}
+				
 		}
+	}
+	for (const Cases& e : vec) {
+		e.display();
 	}
 
 	return 0;

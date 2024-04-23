@@ -58,6 +58,7 @@ void Cases::display() const
 	char buffer[32];
 	ctime_s(buffer, 26, &m_time[0]);
 	std::cout << "Creation time " << buffer << "\n";
+	std::cout << "headed times : " << m_case_heard << "\n";
 
 }
 
