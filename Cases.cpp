@@ -7,7 +7,10 @@ Cases::Cases()
 {
 	std::cout << "Cases classes contructor\n";
 	this->m_case_id = ++m_cnt;
+	this->m_case_heard = 0;
 	this->m_case_status = 3;
+	std::cout << "Enter time required for simulation : ";
+	std::cin >> m_time_req;
 	std::cout << "Enter case type, priority : ";
 	std::cin >> m_case_type >> m_case_priority;
 	int n, m;
@@ -21,7 +24,7 @@ Cases::Cases()
 
 Cases::~Cases()
 {
-	std::cout << "Cases classes destructor\n";
+	// std::cout << "Cases classes destructor\n";
 }
 
 void Cases::input()
@@ -33,6 +36,7 @@ void Cases::display() const
 {
 	std::cout << "-------------- Case detail -----------------\n";
 	std::cout << "Case id : " << m_case_id << "\n";
+	std::cout << "Case time required : " << m_time_req << "\n";
 	std::cout << "Case status : " << m_case_status << "\n";
 	std::cout << "Case type and priority : " << m_case_type << " " << m_case_priority << "\n";
 	std::cout << "Petitioner are : \n";
@@ -55,4 +59,9 @@ void Cases::display() const
 	ctime_s(buffer, 26, &m_time[0]);
 	std::cout << "Creation time " << buffer << "\n";
 
+}
+
+Cases* Cases::get()
+{
+	return this;
 }
