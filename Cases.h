@@ -17,6 +17,7 @@ public:
 	~Cases();
 	void input();
 	void display() const;
+	void setTime(time_t);
 	Cases* get();
 	unsigned int m_case_id;
 	unsigned int m_case_type;

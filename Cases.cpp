@@ -54,12 +54,21 @@ void Cases::display() const
 	std::cout << "layers are : \n";
 	m_forl.display();
 	m_againstl.display();
-
 	char buffer[32];
 	ctime_s(buffer, 26, &m_time[0]);
 	std::cout << "Creation time " << buffer << "\n";
+	for (int i = 1; i < m_time.size(); i++)
+	{
+		ctime_s(buffer, 26, &m_time[i]);
+		std::cout << "Case heared on : " << buffer << "\n";
+	}
 	std::cout << "headed times : " << m_case_heard << "\n";
 
+}
+
+void Cases::setTime(time_t t)
+{
+	this->m_time.push_back(t);
 }
 
 Cases* Cases::get()
