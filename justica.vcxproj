@@ -77,12 +77,12 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\91638\Desktop\C++\justica\external\imgui;C:\Users\91638\Desktop\C++\justica\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\external\imgui;$(SolutionDir)\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\91638\Desktop\C++\justica\external\glfw\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\external\glfw\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -113,12 +113,12 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\91638\Desktop\C++\justica\external\imgui;C:\Users\91638\Desktop\C++\justica\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\external\imgui;$(SolutionDir)\external\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\91638\Desktop\C++\justica\external\glfw\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\external\glfw\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -143,32 +143,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imgui.cpp" />
-    <ClCompile Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imgui_demo.cpp" />
-    <ClCompile Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imgui_draw.cpp" />
-    <ClCompile Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imgui_impl_glfw.cpp" />
-    <ClCompile Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imgui_impl_opengl3.cpp" />
-    <ClCompile Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imgui_tables.cpp" />
-    <ClCompile Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Accused.cpp" />
     <ClCompile Include="Cases.cpp" />
+    <ClCompile Include="external\imgui\imgui.cpp" />
+    <ClCompile Include="external\imgui\imgui_demo.cpp" />
+    <ClCompile Include="external\imgui\imgui_draw.cpp" />
+    <ClCompile Include="external\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="external\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="external\imgui\imgui_tables.cpp" />
+    <ClCompile Include="external\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Judge.cpp" />
     <ClCompile Include="Judgement.cpp" />
     <ClCompile Include="Lawyer.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imconfig.h" />
-    <ClInclude Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imgui.h" />
-    <ClInclude Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imgui_impl_glfw.h" />
-    <ClInclude Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imgui_impl_opengl3.h" />
-    <ClInclude Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imgui_impl_opengl3_loader.h" />
-    <ClInclude Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imgui_internal.h" />
-    <ClInclude Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imstb_rectpack.h" />
-    <ClInclude Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imstb_textedit.h" />
-    <ClInclude Include="..\..\Record_Management_of_Family in City\Record_Management_of_Family in City -  Manish\external\imgui\imstb_truetype.h" />
     <ClInclude Include="Accused.h" />
     <ClInclude Include="Cases.h" />
+    <ClInclude Include="external\imgui\imconfig.h" />
+    <ClInclude Include="external\imgui\imgui.h" />
+    <ClInclude Include="external\imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="external\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="external\imgui\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="external\imgui\imgui_internal.h" />
+    <ClInclude Include="external\imgui\imstb_rectpack.h" />
+    <ClInclude Include="external\imgui\imstb_textedit.h" />
+    <ClInclude Include="external\imgui\imstb_truetype.h" />
     <ClInclude Include="Judge.h" />
     <ClInclude Include="Judgement.h" />
     <ClInclude Include="Lawyer.h" />
